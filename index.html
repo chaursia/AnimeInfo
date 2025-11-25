@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+    <!-- style sheet -->
+    <link rel="stylesheet" href="style.css">
+    <title>Anime Database | Home </title>
+    <!-- box icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+</head>
+
+<body>
+    <header>
+        <!-- start navbar -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Series</a></li>
+                <li><a href="#">Kids</a></li>
+            </ul>
+
+            <ul class="icons">
+                <li><i class='bx bx-search'></i></li>
+                <li><i class='bx bx-user-circle'></i></li>
+            </ul>
+        </nav>
+
+        <!-- start hero secton -->
+        <div class="hero">
+            <h1>Welcome  <br>Anime Databse</h1>
+            <ul>
+                <li>Dive in Anime World</li>
+                <li class="rating"><i class='bx bxs-star'></i> Top Since </li>
+                <li class="date">2024</li>
+            </ul>
+
+            <div class="buttons">
+                <button type="button" class="play">Explore</button>
+                <button type="button" class="fav"><i class='bx bx-plus'></i></button>
+            </div>
+
+            <!-- my list section -->
+            <div class="my-list">
+                <h2>Trending</h2>
+
+                <div class="cards" id="trending-anime"> 
+                    <!-- card 01 -->
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+
+  
+  <div class="main-container">
+  
+  <div class="share-box margin-default">
+    <div class="separator"></div>
+    <div class="share-text">
+        <p>Share Kenime</p>
+    </div>
+    
+    <div class="share-buttons">
+        <a class="whatsapp" href="#" target="_blank">
+            <img src="https://img.icons8.com/color/24/whatsapp.png" alt="WhatsApp"> <span class="button-text">WhatsApp</span>
+        </a>
+        <a class="facebook" href="#" target="_blank">
+            <img src="https://img.icons8.com/color/24/facebook.png" alt="Facebook"> <span class="button-text">Facebook</span>
+        </a>
+        <a class="reddit" href="#" target="_blank">
+            <img src="https://img.icons8.com/color/24/reddit.png" alt="Reddit"> <span class="button-text">Reddit</span>
+        </a>
+        <a class="twitter" href="#" target="_blank">
+            <img src="https://img.icons8.com/color/24/twitter.png" alt="Twitter"> <span class="button-text">Twitter</span>
+        </a>
+        <a class="telegram" href="#" target="_blank">
+            <img src="https://img.icons8.com/color/24/telegram-app.png" alt="Telegram"> <span class="button-text">Telegram</span>
+        </a>
+        <button class="copy-link">
+            <img src="https://img.icons8.com/color/24/copy.png" alt="Copy"> <span class="button-text">Copy Link</span>
+        </button>
+    </div>
+  </div>
+  
+  <!-- Grid Content -->
+   <div class="grid-mg-container">
+        <!-- Top Airing -->
+        <div class="grid-mg-section">
+            <h3>Top Airing</h3>
+
+            <div id="top-arising-anime" class="an-grid-container arising">
+              <!-- Top Arising Anime will be injected here -->
+          </div>
+            
+            <a href="#" class="view-more">View More ></a>
+        </div>
+    
+        <!-- Most Popular -->
+        <div class="grid-mg-section">
+            <h3>Most Popular</h3>
+
+            <div id="top-favorite-anime" class="an-grid-container favorite">
+              <!-- Top Favorite Anime will be injected here -->
+          </div>
+  
+            <a href="#" class="view-more">View More ></a>
+        </div>
+    
+        <!-- Most Favorite -->
+        <div class="grid-mg-section">
+            <h3>Top 90s</h3>
+
+            <div id="most-popular-anime" class="an-grid-container popular">
+              <!-- Most Popular Anime will be injected here -->
+          </div>
+            <a href="#" class="view-more">View More ></a>
+        </div>
+    
+        <!-- Top Upcoming -->
+        <div class="grid-mg-section">
+            <h3>Top Upcoming</h3>
+
+            <div class="an-grid-container up" id="upcoming-anime">
+              <!-- Upcoming anime will be injected here -->
+          </div>
+            <a href="#" class="view-more">View More ></a>
+        </div>
+    </div>
+  
+
+<!-- Character -->
+<div class="characters-top">
+    <h2>Top Rated Characters</h2>
+    <div class="grid" id="character-grid"></div>
+</div>
+
+<!-- Genres -->
+<div class="mg-btn-an">
+    <button class="sc-btn-pre" id="prev-btn">
+        <i class="fas fa-chevron-left"></i> <!-- Font Awesome left arrow icon -->
+    </button>
+    <div class="mg-btn-wrapper" id="mg-btn-wrapper">
+       
+    </div>
+    <button class="sc-btn-pre" id="next-btn">
+        <i class="fas fa-chevron-right"></i> <!-- Font Awesome right arrow icon -->
+    </button>
+  </div>
+
+  
+
+
+<!-- Best of Section -->
+<div class="grid-section">
+    <div class="grid-column">
+        <div class="grid-title">Best Of 90s</div>
+        <div id="anime-90s"></div>
+        <div class="show-more" onclick="fetchAnime(1990, 1999, '#anime-90s', true)">Show More</div>
+    </div>
+
+    <div class="grid-column">
+        <div class="grid-title">Best Of 00s</div>
+        <div id="anime-00s"></div>
+        <div class="show-more" onclick="fetchAnime(2000, 2009, '#anime-00s', true)">Show More</div>
+    </div>
+
+    <div class="grid-column">
+        <div class="grid-title">Best Of 10s</div>
+        <div id="anime-10s"></div>
+        <div class="show-more" onclick="fetchAnime(2010, 2019, '#anime-10s', true)">Show More</div>
+    </div>
+</div>
+
+
+
+
+<!-- Video Trailers -->
+<div class="video-grid" id="video-trailer"></div>
+
+
+<svg id="grid-cc-icon" width="24" height="24">
+    <symbol id="grid-cc-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 11h-1.5v-.5h-2v3h2V13H18v1a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1m-7 1H9.5v-.5h-2v3h2V13H11v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1m8-6H5c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/>
+    </symbol>
+    </svg>
+    
+    
+    <!-- grid-rating star icon -->
+    <svg id="grid-rating-icon" width="0" height="0">
+        <symbol id="grid-rating-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21 7 14.13 2 9.27l6.91-1.01z"/>
+        </symbol>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute;">
+      <symbol id="grid-mic-icon" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 3.25A3.25 3.25 0 0 0 8.75 6.5v6a3.25 3.25 0 0 0 6.5 0v-6A3.25 3.25 0 0 0 12 3.25"/>
+        <path fill="currentColor" d="M7.75 12.5a.75.75 0 0 0-1.5 0a5.75 5.75 0 0 0 5 5.701v1.049H9a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5h-2.25v-1.049a5.75 5.75 0 0 0 5-5.701a.75.75 0 0 0-1.5 0a4.25 4.25 0 0 1-8.5 0"/>
+      </symbol>
+    </svg>
+
+</body><!--Main container-->
+
+    <script src="kitsu.js"></script>
+    <script src="anilist.js"></script>
+    <script src="jikan.js"></script>
+
+    <script>
+        document.getElementById('prev-btn').addEventListener('click', () => {
+          document.getElementById('mg-btn-wrapper').scrollBy({
+              left: -100, // Adjust scroll distance as needed
+              behavior: 'smooth'
+          });
+      });
+      
+      document.getElementById('next-btn').addEventListener('click', () => {
+          document.getElementById('mg-btn-wrapper').scrollBy({
+              left: 100, // Adjust scroll distance as needed
+              behavior: 'smooth'
+          });
+      });
+      </script>
+      
+</body>
+
+</html>
